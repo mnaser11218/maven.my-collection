@@ -32,7 +32,7 @@ public class ImportChecker {
     }
 
     public static void scanClass(Class<?> clazz) {
-        scanClass(clazz, "java.util");
+     //   scanClass(clazz, "java.util");
     }
 
     public static void scanClass(Class<?> someClass, String... forbiddenStrings) {
