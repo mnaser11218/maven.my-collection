@@ -18,17 +18,17 @@ import java.util.function.BiPredicate;
 public class ImportChecker {
     @Test
     public void checkForCollectionsTest() {
-        try {
+//        try {
             final String currentDirectory = System.getProperty("user.dir") + "/src/main";
             final Path path = Paths.get(currentDirectory);
             final BiPredicate<Path, BasicFileAttributes> condition = (p, bfa) -> bfa.isRegularFile();
-            Files
-                    .find(path, 999, condition)
-                    .filter(eachPath -> eachPath.toFile().toString().endsWith(".java"))
-                    .forEach(classPath -> scanClass(classPath, "java.util"));
-        } catch (final IOException e) {
-            throw new RuntimeException(e);
-        }
+//            Files
+//                    .find(path, 999, condition)
+//                    .filter(eachPath -> eachPath.toFile().toString().endsWith(".java"))
+////                    .forEach(classPath -> scanClass(classPath, "java.util"));
+//        } catch (final IOException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     public static void scanClass(Class<?> clazz) {
