@@ -14,25 +14,28 @@ import org.junit.Test;
 public class RemoveByIndex {
     //given
     private <SomeType> void test(int indexOfElementToRemove, SomeType[] valuesToBePopulatedWith, SomeType[] expectedElementSequence) {
-        MySet<SomeType> myList = new MySet<>(valuesToBePopulatedWith);
+        MySet<SomeType> myList = new MySet<>();
+        System.out.println("testing");
         ImportChecker.scanClass(myList.getClass());
         MyCollectionInterface<SomeType> myCollection = (MyCollectionInterface<SomeType>) myList;
 
         // given elements have been added to collection
         for (SomeType someValue : valuesToBePopulatedWith) {
+            System.out.println("testing some value: " + someValue);
             myCollection.add(someValue);
             Boolean myCollectionContainsValue = myCollection.contains(someValue);
             Assert.assertTrue(myCollectionContainsValue);
         }
         Integer preRemoveLength = myCollection.size(); // get size of collection
         Integer expectedPreRemoveLength = valuesToBePopulatedWith.length;
+        System.out.println("testing preremoval length expec: " + expectedPreRemoveLength + " testing actual length: " + preRemoveLength);
         Assert.assertEquals(expectedPreRemoveLength, preRemoveLength); // ensure length is correct
         Integer expectedPostRemoveLength = preRemoveLength - 1;// get the expected post-removal length
-
         // when
         myCollection.remove(indexOfElementToRemove);
         Integer postRemoveLength = myCollection.size(); // get size of collection
         Integer actualPostRemoveLength = postRemoveLength; // get the actual post-removal length
+        System.out.println("testing postremoval length: " + postRemoveLength);
 
         // then
         Assert.assertEquals(expectedPostRemoveLength, actualPostRemoveLength);

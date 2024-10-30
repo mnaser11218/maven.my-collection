@@ -46,21 +46,21 @@ public class AddTest {
 
     @Test
     public void test2() {
-        test(new String[]{"The", "Quick", "Brown", "The"}, 3);
+        test(new String[]{"The", "Quick", "Brown", "The"}, 4);
     }
 
     @Test
     public void test3() {
-        test(new Integer[]{7, 7, 7, 7, 7, 7, 7}, 1);
+        test(new Integer[]{7, 7, 7, 7, 7, 7, 7}, 7);
     }
 
     @Test
     public void test4() {
-        test(new Date[]{new Date(), new Date(), new Date()}, 1);
+        test(new Date[]{new Date(), new Date(), new Date()}, 3);
     }
 
     @Test
     public void test5() {
-        test(new Date[]{new Date(), new Date(), new Date()}, 1);
+        test(new Date[]{new Date(), new Date(), new Date()}, 3);
     }
 }

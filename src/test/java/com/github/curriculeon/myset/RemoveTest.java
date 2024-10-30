@@ -3,6 +3,7 @@ package com.github.curriculeon.myset;
 import com.github.curriculeon.ImportChecker;
 import com.github.curriculeon.MyArrayList;
 import com.github.curriculeon.MyCollectionInterface;
+import com.github.curriculeon.MySet;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ import java.util.Date;
 public class RemoveTest {
     //given
     private <SomeType> void test(SomeType... valuesToBePopulatedWith) {
-        MyArrayList<SomeType> myList = new MyArrayList<>();
+        MySet<SomeType> myList = new MySet<>();
         ImportChecker.scanClass(myList.getClass());
         MyCollectionInterface<SomeType> myCollection = (MyCollectionInterface<SomeType>) myList;
 
